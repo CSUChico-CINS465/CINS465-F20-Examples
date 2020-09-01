@@ -58,7 +58,7 @@ d["key"] += "value2"
 d["key"] = [1,2,3,4]
 d["key2"] = {"key3":"value"}
 
-d[True]()
+d[3<4]()
 
 
 
