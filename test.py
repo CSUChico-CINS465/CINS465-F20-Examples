@@ -49,16 +49,68 @@ a = [5] + a
 # a += [3.0]
 # a += [True]
 # print(a)
-def x():
-    print("bob")
+# def x():
+#     print("bob")
 
 d = {True:x}
-d["key"] = "value"
-d["key"] += "value2"
-d["key"] = [1,2,3,4]
-d["key2"] = {"key3":"value"}
+# d["key"] = "value"
+# d["key"] += "value2"
+# d["key"] = [1,2,3,4]
+# d["key2"] = {"key3":"value"}
 
-d[3<4]()
+# d[3<4]()
+
+t = (1,2,3)
+# a = [4,5,6]
+d[t]="bob"
+# d[a]="alice"
+# print(d)
+
+def fun(a,b="bob",c="alice"):
+    print(a)
+    print(b)
+    print(c)
+
+# fun("hi", c="carl")
+# fun(b="a",c="b",a="c")
+
+# def create_adder(x):
+#     def adder(y):
+#         return x + y
+#     return adder
+
+# add_10 = create_adder(10)
+# print(add_10(3))   
+
+class Human:
+    species = "H. sapiens"
+
+    def __init__(self, name):
+        self.name = name
+        self.age = 0
+
+    def about(self):
+        print(self.name + " is " 
+            + str(self.age) + " years old"
+            + " and is of species " + self.species)
+
+class Student(Human):
+    def __init__(self, name, year):
+        self.year = year
+        super().__init__(name)
+    
+    def about(self):
+        print(self.name + " is " 
+            + str(self.age) + " years old"
+            + " and a " + self.year)
+
+i = Human(name="Bob")
+i.about()
+
+s = Student(name="alice",year="Sophomore")
+s.about()
+
+
 
 
 
