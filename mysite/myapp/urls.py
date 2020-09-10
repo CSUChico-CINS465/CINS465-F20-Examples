@@ -4,5 +4,5 @@ from . import views #convention
 
 urlpatterns = [
     path('', views.index),
-    path('<int:page>/', views.index),
+    path('<int:page>/', views.page),
 ]

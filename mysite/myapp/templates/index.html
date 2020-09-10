@@ -1,16 +1,16 @@
 {% extends "base.html" %}
 {% block title %}{{ title }}{% endblock %}
 {% block content %}
-{% if seen %}
-{% if prev >= 0 %}
-    <a href="/{{ prev }}/">prev</a>
-{% endif %}
-<a href="/{{ next }}/">next</a>
 <ul>
-    {% for i in body %}
-    <li>{{ i }}</li>
-    {% endfor %}
+    <div class="grid-container">
+        <div class="grid-x grid-padding-x">
+            {% for sugg in suggestions %}
+            <div class="large-4 medium-4 cell">
+                <li>{{ sugg }}</li>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 </ul>
-{% endif %}
 {% endblock %}
 
