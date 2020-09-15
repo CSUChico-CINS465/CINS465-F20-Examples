@@ -5,12 +5,17 @@
     <div class="grid-container">
         <div class="grid-x grid-padding-x">
             {% for sugg in suggestions %}
-            <div class="large-4 medium-4 cell">
+            <div class="large-12 medium-12 cell">
                 <li>{{ sugg }}</li>
             </div>
             {% endfor %}
         </div>
     </div>
 </ul>
+<form action="/" method="post">
+{% csrf_token %}
+{{ form }}
+<input type="submit" class="button" value="Add Suggestion"/>
+</form>
 {% endblock %}
 
