@@ -25,8 +25,9 @@ class SuggestionForm(forms.Form):
         # validators=[validate_slug, must_be_caps, must_be_bob],
     )
 
-    def save(self):
+    def save(self, request):
         suggestion_instance = models.SuggestionModel()
         suggestion_instance.suggestion = self.cleaned_data["suggestion"]
+        suggestion_instance.author = request.user
         suggestion_instance.save()
         return suggestion_instance

@@ -6,16 +6,25 @@
         <div class="grid-x grid-padding-x">
             {% for sugg in suggestions %}
             <div class="large-12 medium-12 cell">
-                <li>{{ sugg }}</li>
+                <li>{{ sugg.suggestion }} - {{ sugg.author }}
+                    <ul>
+                        {% for comm in sugg.comments %}
+                            <li>{{ comm.comment }} - {{ comm.author }}</li>
+                        {% endfor %}
+                    </ul>
+                </li>
             </div>
             {% endfor %}
         </div>
     </div>
 </ul>
+{{ comments }}
+{% if request.user.is_authenticated %}
 <form action="/" method="post">
 {% csrf_token %}
 {{ form }}
 <input type="submit" class="button" value="Add Suggestion"/>
 </form>
+{% endif %}
 {% endblock %}
 
