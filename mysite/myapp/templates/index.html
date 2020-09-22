@@ -18,8 +18,9 @@
         </div>
     </div>
 </ul>
-{{ comments }}
+
 {% if request.user.is_authenticated %}
+<!-- Form Goes Here-->
 <form action="/" method="post">
 {% csrf_token %}
 {{ form }}
