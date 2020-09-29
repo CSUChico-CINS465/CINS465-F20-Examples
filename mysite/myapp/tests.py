@@ -16,3 +16,15 @@ class SuggestionTestCase(TestCase):
         cat = models.SuggestionModel.objects.get(suggestion="cat")
         self.assertEqual(str(lion), 'john lion')
         self.assertEqual(str(cat), 'john cat')
+
+    def test_suggestion_author(self):
+        lion = models.SuggestionModel.objects.get(suggestion="lion")
+        cat = models.SuggestionModel.objects.get(suggestion="cat")
+        self.assertEqual(lion.author.username, "john")
+        self.assertEqual(cat.author.username, "john")
+
+    def test_suggestion_suggestion(self):
+        lion = models.SuggestionModel.objects.get(suggestion="lion")
+        cat = models.SuggestionModel.objects.get(suggestion="cat")
+        self.assertEqual(lion.suggestion, "lion")
+        self.assertEqual(cat.suggestion, "cat")
