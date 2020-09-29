@@ -8,13 +8,11 @@ class SuggestionTestCase(TestCase):
         user = User.objects.create_user('john', 'lennon@thebeatles.com', 'johnpassword')
         user.save()
         user_instance = User.objects.get(id=1)
-        models.SuggestionModel.objects.create(suggestion="lion", author=user)
-        models.SuggestionModel.objects.create(suggestion="cat", author=user)
-    
+        models.SuggestionModel.objects.create(suggestion="lion", author=user_instance)
+        models.SuggestionModel.objects.create(suggestion="cat", author=user_instance)
+
     def test_suggestion_to_string(self):
         lion = models.SuggestionModel.objects.get(suggestion="lion")
         cat = models.SuggestionModel.objects.get(suggestion="cat")
         self.assertEqual(str(lion), 'john lion')
         self.assertEqual(str(cat), 'john cat')
-    
-    
