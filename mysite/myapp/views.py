@@ -1,8 +1,7 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse, JsonResponse
+from django.http import  JsonResponse
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
-from django.conf import settings
 
 
 from . import models
@@ -45,7 +44,7 @@ def index(request):
     return render(request, "index.html", context=context)
 
 @login_required
-def page(request, page=0):
+def page_view(request, page=0):
     # if not request.user.is_authenticated:
     #     return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
     if request.method == "POST":
@@ -74,6 +73,7 @@ def page(request, page=0):
         "title":"Suggestions",
         "suggestions":suggestion_list,
         "form":suggestion_form,
+        "page":page,
         # "comments":comments
     }
     return render(request, "index.html", context=context)

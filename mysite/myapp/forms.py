@@ -31,7 +31,7 @@ class SuggestionForm(forms.Form):
         label='Suggestion',
         required=True,
         max_length=240,
-        # validators=[validate_slug, must_be_caps, must_be_bob],
+        validators=[validate_slug, must_be_caps, must_be_bob],
     )
 
     def save(self, request):
@@ -54,7 +54,7 @@ class RegistrationForm(UserCreationForm):
                   "password1", "password2")
 
     def save(self, commit=True):
-        user = super(RegistrationForm, self).save(commit=False)
+        user = super().save(commit=False)
         user.email = self.cleaned_data["email"]
         if commit:
             user.save()

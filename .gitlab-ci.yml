@@ -19,8 +19,8 @@ pylint:
   script:
     - python -V
     #Change paths to your project/app folders
-    - pylint --load-plugins pylint_django --disable=missing-docstring ./mysite/mysite
-    - pylint --load-plugins pylint_django --disable=missing-docstring ./mysite/myapp
+    - pylint --load-plugins pylint_django --disable=missing-docstring --disable=imported-auth-user ./mysite/mysite
+    - pylint --load-plugins pylint_django --disable=missing-docstring --disable=imported-auth-user ./mysite/myapp
 
 #Build test container
 build:
@@ -36,7 +36,7 @@ test:
   stage: test
   image: "$CI_REGISTRY_IMAGE:testing"
   script:
-    - cd /code
+    - cd /code/mysite/
     - coverage --version
     - coverage run --source='.' ./manage.py test
     - coverage report --skip-covered
