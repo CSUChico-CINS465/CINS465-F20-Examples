@@ -20,7 +20,7 @@ pylint:
     - python -V
     #Change paths to your project/app folders
     - pylint --load-plugins pylint_django --disable=missing-docstring --disable=imported-auth-user ./mysite/mysite
-    - pylint --load-plugins pylint_django --disable=missing-docstring --disable=imported-auth-user ./mysite/myapp
+    - pylint --load-plugins pylint_django --disable=missing-docstring --disable=imported-auth-user --disable=line-too-long ./mysite/myapp
 
 #Build test container
 build:
