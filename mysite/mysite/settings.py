@@ -25,7 +25,7 @@ SECRET_KEY = '2m2+k#*5%c-!^j6!a@-e9ksvxwp)jw=dr^42_&6qn8v@nq_r^e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["35.209.62.87"]
+ALLOWED_HOSTS = ["35.209.62.87","alumnimentor.org","www.alumnimentor.org"]
 
 LOGIN_REDIRECT_URL="/"
 LOGIN_URL="/login/"
@@ -77,9 +77,17 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'django',
+        'USER': 'django',
+        'PASSWORD': 'django',
+        'HOST': '35.192.24.248',
+        'PORT': '5432',
     }
 }
 

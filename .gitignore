@@ -246,3 +246,6 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+# Ignore SSL
+ssl/
+
