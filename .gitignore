@@ -249,3 +249,5 @@ Temporary Items
 # Ignore SSL
 ssl/
 
+#Ignore GCP JSON
+mysite/CINS465-Primary-7a12f033f420.json
