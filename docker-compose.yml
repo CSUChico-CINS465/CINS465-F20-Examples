@@ -23,11 +23,18 @@ services:
     expose:
       - 6379
   
+  # wasm:
+  #   restart: always
+  #   build: ./wasm/
+  #   # user: "1001:1002" #System dependent
+  #   volumes:
+  #      - .:/code
+  
   nginx:
     restart: always
     build: ./nginx/
-    # volumes:
-    #   - ./mysite/myapp/static:/static/
+    volumes:
+      - ./mysite/myapp/static:/static/
     depends_on:
       - web
     ports:

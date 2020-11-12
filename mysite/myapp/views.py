@@ -11,7 +11,7 @@ from . import forms
 
 def logout_view(request):
     logout(request)
-    return redirect("/login/")
+    return redirect("/django_login/")
 
 # Create your views here.
 def index(request):
@@ -102,7 +102,7 @@ def register(request):
         form_instance = forms.RegistrationForm(request.POST)
         if form_instance.is_valid():
             form_instance.save()
-            return redirect("/login/")
+            return redirect("/django_login/")
     else:
         form_instance = forms.RegistrationForm()
     context = {

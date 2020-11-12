@@ -5,9 +5,9 @@ from . import views #convention
 
 urlpatterns = [
     path('', views.index),
-    path('login/', auth_views.LoginView.as_view()),
+    path('django_login/', auth_views.LoginView.as_view()),
     path('register/', views.register),
-    path('logout/', views.logout_view),
+    path('django_logout/', views.logout_view),
     path('suggestions/', views.get_suggestions),
     path('comment/<int:sugg_id>/', views.comment),
     path('suggestion/', views.add_suggestion),
